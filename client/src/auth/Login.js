@@ -3,18 +3,19 @@ import { toast } from "react-toastify";
 import { login } from "../actions/auth";
 import LoginForm from "../components/LoginForm";
 import { useDispatch } from "react-redux";
+import "../style/LoginSignup.css";
 
 const Login = ({ history }) => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("SEND LOGIN DATA", { email, password });
+    console.log("SEND LOGIN DATA", { username, password });
     try {
-      let res = await login({ email, password });
+      let res = await login({ username, password });
 
       if (res.data) {
         console.log(
@@ -39,17 +40,13 @@ const Login = ({ history }) => {
 
   return (
     <>
-      <div className="container-fluid bg-secondary p-5 text-center">
-        <h1>Login</h1>
-      </div>
-
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 offset-md-3">
+      <div class="limiter">
+		    <div class="container-login100">
+			    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
             <LoginForm
               handleSubmit={handleSubmit}
-              email={email}
-              setEmail={setEmail}
+              username={username}
+              setUsername={setUsername}
               password={password}
               setPassword={setPassword}
             />
@@ -61,3 +58,5 @@ const Login = ({ history }) => {
 };
 
 export default Login;
+
+
