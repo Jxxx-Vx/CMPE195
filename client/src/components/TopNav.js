@@ -23,8 +23,8 @@ const TopNav = () => {
       </Link>
 
       {auth !== null && (
-        <Link className="nav-link" to="/dashboard">
-          Dashboard
+        <Link className="nav-link" to="/Alerts">
+          Alerts
         </Link>
       )}
 

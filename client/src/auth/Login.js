@@ -29,7 +29,7 @@ const Login = ({ history }) => {
           payload: res.data,
         });
         toast.success("Login Successful");
-        history.push("/dashboard");
+        history.push("/Alerts");
       }
     } catch (err) {
       console.log(err);
