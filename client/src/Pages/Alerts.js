@@ -8,7 +8,7 @@ const Alerts = ({ history }) => {
   const handleSubmit1 = async (e) => {
     e.preventDefault();
     try {
-      let res = await getUSGS();
+      let res = await getUSGS('hi');
       if(res.data){
         console.log(res.data);
       }
