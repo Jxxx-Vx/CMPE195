@@ -8,7 +8,8 @@ const Nav = styled.nav`
   align-items: center;
   background-color: #072e59;
   padding: 1rem;
-`;
+  border-bottom: 3px solid #051f3d;
+  `;
 
 const NavLinks = styled.div`
   display: flex;
