@@ -3,24 +3,23 @@ import { getUSGS } from "../actions/alerts";
 import { getNWS } from "../actions/alerts";
 
 
-const Alerts = ({ history }) => {
+const Alerts = () => {
 
-  const handleSubmit1 = async (e) => {
-    e.preventDefault();
+  const handleSubmit1 = async () => {
     try {
-      let res = await getUSGS('hi');
+      let res = await getUSGS();
       if(res.data){
         console.log(res.data);
       }
 
     } catch (err) {
       console.log(err);
-      if (err.response.status === 400) toast.error(err.response.data);
+      if (err.response.status === 400) 
+        toast.error(err.response.data);
     }
   };
 
-  const handleSubmit2 = async (e) => {
-    e.preventDefault();
+  const handleSubmit2 = async () => {
     try {
       let res = await getNWS();
       if(res.data){
@@ -29,7 +28,8 @@ const Alerts = ({ history }) => {
 
     } catch (err) {
       console.log(err);
-      if (err.response.status === 400) toast.error(err.response.data);
+      if (err.response.status === 400) 
+        toast.error(err.response.data);
     }
   };
 
@@ -42,8 +42,8 @@ const Alerts = ({ history }) => {
       <div className="container">
         <div className="row">
           <div className="col-md-6 offset-md-3">
-            <button onSubmit={handleSubmit1}>USGS</button>
-            <button onSubmit={handleSubmit2}>NWS</button>
+            <button onClick={handleSubmit1}>USGS</button>
+            <button onClick={handleSubmit2}>NWS</button>
           </div>
         </div>
       </div>
