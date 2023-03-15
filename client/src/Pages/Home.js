@@ -58,7 +58,7 @@ const Home = () => {
           </form>
         </div>
         <div className="home-news">
-          <h2 className="home-section-title">Emergency News</h2>
+          <h2 className="blue">Emergency News</h2>
           <p className="home-section-description">
             Take a look at the latest Emergency News reports
           </p>
