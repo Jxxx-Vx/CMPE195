@@ -55,7 +55,7 @@ const Login = ({ history }) => {
           <MDBCard className='cardbody  text-white my-5 mx-auto' style={{borderRadius: '1rem', maxWidth: '400px'}}>
           <MDBCardBody className='p-5 d-flex flex-column align-items-center mx-auto w-100'>
             <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-            <p className="text-white-50 mb-5">Please enter your login and password!</p>
+            <p className="text-black-50 mb-5">Please enter your login and password!</p>
             <form onSubmit={handleSubmit}>
               <h5>Username</h5>
               <MDBInput
@@ -72,7 +72,6 @@ const Login = ({ history }) => {
               <h5>Password</h5>
               <MDBInput 
                 className = "password-textbox" 
-                
                 labelClass='text-white' 
                 label='Password' 
                 id='formControlLg' 
@@ -88,7 +87,6 @@ const Login = ({ history }) => {
             </MDBBtn>
             <br/>
             <br/>
-            
             <div>
               <p className="mb-5 text-black-50">Don't have an account? <a href="http://localhost:3000/register" class="text-dark-50 fw-bold">Sign Up</a></p>
             </div>
