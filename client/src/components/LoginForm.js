@@ -9,7 +9,7 @@ const LoginForm = ({
 		<span class="login100-form-title p-b-49">
 			Login
 		</span>
-		<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+		<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
 		  <span class="label-input100">Username</span>
 			<input 
         class="input100" 
@@ -43,7 +43,7 @@ const LoginForm = ({
 				<span class="txt1 p-b-17">
 					No Account?
 				</span>
-        <a href="#" class="txt2">
+        <a href="http://localhost:3000/register" class="txt2">
 					Sign Up
 				</a>
 			</div>
