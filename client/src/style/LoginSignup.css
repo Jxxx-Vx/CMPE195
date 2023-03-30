@@ -1,0 +1,9 @@
+.logincontainer{
+    background-image: url("../images/blue-and-yellow-background.jpg");
+}
+
+.cardbody{
+    background-color: rgb(254, 254, 254);
+    border-color: rgb(41, 28, 114);
+    border-width: 5px;
+}
