@@ -10,21 +10,20 @@ import {
   MDBCol,
   MDBCard,
   MDBCardBody,
-  MDBInput
-}
-from 'mdb-react-ui-kit';
+  MDBInput,
+} from "mdb-react-ui-kit";
 
 const Login = ({ history }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("SEND LOGIN DATA", { username, password });
+    console.log("SEND LOGIN DATA", { name, password });
     try {
-      let res = await login({ username, password });
+      let res = await login({ name, password });
 
       if (res.data) {
         console.log(
@@ -49,59 +48,68 @@ const Login = ({ history }) => {
 
   return (
     <>
-      <MDBContainer fluid className = "logincontainer">
-        <MDBRow className='d-flex justify-content-center align-items-center h-100'>
-          <MDBCol col='12'>
-          <MDBCard className='cardbody  text-white my-5 mx-auto' style={{borderRadius: '1rem', maxWidth: '400px'}}>
-          <MDBCardBody className='p-5 d-flex flex-column align-items-center mx-auto w-100'>
-            <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-            <p className="text-black-50 mb-5">Please enter your login and password!</p>
-            <form onSubmit={handleSubmit}>
-              <h5>Username</h5>
-              <MDBInput
-                className = "username-textbox" 
-                labelClass='text-white' 
-                label='Username' 
-                id='formControlLg' 
-                type='text' 
-                size="lg"
-                placeholder= "Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              <h5>Password</h5>
-              <MDBInput 
-                className = "password-textbox" 
-                labelClass='text-white' 
-                label='Password' 
-                id='formControlLg' 
-                type='password' 
-                size="lg"
-                placeholder= "Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </form>
-            <MDBBtn outline className='mx-2 px-5' size='lg'>
-              Login
-            </MDBBtn>
-            <br/>
-            <br/>
-            <div>
-              <p className="mb-5 text-black-50">Don't have an account? <a href="http://localhost:3000/register" class="text-dark-50 fw-bold">Sign Up</a></p>
-            </div>
-          </MDBCardBody>
-        </MDBCard>
-      </MDBCol>
-    </MDBRow>
+      <MDBContainer fluid className="logincontainer">
+        <MDBRow className="d-flex justify-content-center align-items-center h-100">
+          <MDBCol col="12">
+            <MDBCard
+              className="cardbody  text-white my-5 mx-auto"
+              style={{ borderRadius: "1rem", maxWidth: "400px" }}
+            >
+              <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
+                <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
+                <p className="text-black-50 mb-5">
+                  Please enter your login and password!
+                </p>
+                <form onSubmit={handleSubmit}>
+                  <h5>Username</h5>
+                  <MDBInput
+                    className="name-textbox"
+                    labelClass="text-white"
+                    label="name"
+                    id="formControlLg"
+                    type="text"
+                    size="lg"
+                    placeholder="Username"
+                    value={name}
+                    onChange={(e) => setUsername(e.target.value)}
+                  />
+                  <h5>Password</h5>
+                  <MDBInput
+                    className="password-textbox"
+                    labelClass="text-white"
+                    label="Password"
+                    id="formControlLg"
+                    type="password"
+                    size="lg"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <MDBBtn outline className="mx-2 px-5" size="lg" disabled={!name || !password}>
+                    Login
+                  </MDBBtn>
+                </form>
 
-    </MDBContainer>
+                <br />
+                <br />
+                <div>
+                  <p className="mb-5 text-black-50">
+                    Don't have an account?{" "}
+                    <a
+                      href="http://localhost:3000/register"
+                      class="text-dark-50 fw-bold"
+                    >
+                      Sign Up
+                    </a>
+                  </p>
+                </div>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
     </>
   );
 };
 
 export default Login;
-
-
-
-

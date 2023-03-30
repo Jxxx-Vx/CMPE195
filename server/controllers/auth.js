@@ -27,11 +27,11 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   // console.log(req.body);
-  const { email, password } = req.body;
+  const { name, password } = req.body;
   try {
 
     // check if user with that email exist
-    let user = await User.findOne({ email }).exec();
+    let user = await User.findOne({ name }).exec();
     // console.log("USER EXIST", user);
     if (!user) res.status(400).send("User with that email not found");
     // compare password
