@@ -15,4 +15,18 @@ export const usgs = async (req, res) => {
   }
 };
 
-export const nws = async (res) => {};
+export const nws = async (req, res) => {
+    const{area} = req.body;
+    try {
+      const response = await axios
+        .get(
+          `https://api.weather.gov/alerts/active?status=actual&message_type=alert&limit=20&area=${area}`
+        )
+        .then((response) => {
+          res.json(response.data);
+        });
+    } catch (err) {
+      console.log("Alert Error: ", err);
+    }
+  };
+
