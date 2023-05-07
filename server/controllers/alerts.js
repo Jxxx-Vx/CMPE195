@@ -20,7 +20,7 @@ export const nws = async (req, res) => {
     try {
       const response = await axios
         .get(
-          `https://api.weather.gov/alerts/active?status=actual&message_type=alert&limit=20&area=${area}`
+          `https://api.weather.gov/alerts/active?limit=20&area=${area}`
         )
         .then((response) => {
           res.json(response.data);
