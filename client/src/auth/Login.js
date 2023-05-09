@@ -57,7 +57,7 @@ const Login = ({ history }) => {
             >
               <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
                 <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-                <p className="text-black-50 mb-5">
+                <p className="text-black-50 mb-4">
                   Please enter your login and password!
                 </p>
                 <form onSubmit={handleSubmit}>
@@ -85,9 +85,11 @@ const Login = ({ history }) => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <MDBBtn outline className="mx-2 px-5" size="lg" disabled={!name || !password}>
-                    Login
-                  </MDBBtn>
+                  <div className="d-flex justify-content-center align-items-center">
+                    <MDBBtn outline className="mx-2 px-5" size="lg" disabled={!name || !password}>
+                      Login
+                    </MDBBtn>
+                  </div>
                 </form>
 
                 <br />
