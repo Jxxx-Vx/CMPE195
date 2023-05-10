@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const register = async (user) =>
-  await axios.post(`${process.env.REACT_APP_API}/register`, user);
+  await axios.post(`http://localhost:8000/api/register`, user);
 
 export const login = async (user) =>
-  await axios.post(`${process.env.REACT_APP_API}/login`, user);
+  await axios.post(`http://localhost:8000/api/login`, user);

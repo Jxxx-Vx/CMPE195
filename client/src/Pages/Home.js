@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Home.css';
 
@@ -73,13 +73,10 @@ const Home = () => {
           <div className="home-mission-text">
             <h2 className="home-section-title">Our Mission</h2>
               <p className="home-section-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum            
+              Our mission is to keep our users informed and safe by providing real-time updates on emergency events and disasters from various sources. 
+              We believe that with our app, people can be prepared and take the necessary actions to protect themselves and their loved ones. 
+              We are passionate about making a positive impact on the world and continuously strive to improve and expand our services. 
+              Join us in our mission to stay informed and stay safe!  
               </p>
           </div>
           <div className="home-mission-image">
@@ -96,13 +93,9 @@ const Home = () => {
           <div className="home-how-text">
             <h2 className="home-section-title">How it works?</h2>
             <p className="home-section-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+              Our web app is a powerful tool that pulls information from two reliable sources, the National Weather Service API and the United States Geological Survey APIs, 
+              to keep our users updated on natural disasters and emergency events in real-time.  We are passionate about keeping our users informed and safe, 
+              and we're continuously expanding our data sources to provide the most comprehensive and up-to-date information available. 
             </p>
           </div>
           <div className="home-how-image">
@@ -117,13 +110,9 @@ const Home = () => {
           <div className="home-about-text">
             <h2 className="home-section-title">About the Team</h2>
             <p className="home-section-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+              Our team is composed of senior students majoring in Software Engineering at San Jose State University. 
+              We bring diverse skills and experiences to the table, collaborate effectively, and have a passion for learning and applying the latest industry-standard tools and practices. 
+              Our strong work ethic and can-do attitude drive us to continuously improve and deliver high-quality results for our clients and users.
             </p>
           </div>
 

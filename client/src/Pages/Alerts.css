@@ -23,4 +23,34 @@
   .card-text {
     margin: 0;
   }
-  
+
+  .container {
+    padding-top:20px;
+    margin: 0 auto; /* center the container horizontally */
+    max-width: 70%; /* set the maximum width of the container */
+    border: 4px solid rgb(255, 208, 0);
+    box-shadow: 0 4px 10px rgba(0.4, 0.4, 0.4, 0.4);
+    border-radius: 10px;
+    background-color:white;
+  }
+
+  .nav-link {
+    margin-top:20px;
+    font-size: 20px;
+    padding: 15px 20px;
+    font-weight:bold;
+  }
+
+  .background {
+    background-image: url("../images/blue-and-yellow-background.jpg");
+    background-size:cover;
+    min-height: 100vh;
+  }  
+
+  .nav-tabs {
+    border-Bottom: 3px solid #000000;
+  }
+
+  .nav {
+    padding-bottom:10px;
+  }

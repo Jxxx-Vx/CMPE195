@@ -1,5 +1,4 @@
 import { useState } from "react";
-import RegisterForm from "../components/RegisterForm";
 import { toast } from "react-toastify";
 import { register } from "../actions/auth";
 import "../style/LoginSignup.css";
@@ -90,7 +89,7 @@ const Register = ({ history }) => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                   <div className="d-flex justify-content-center align-items-center">
-                    <MDBBtn outline className="mx-2 px-5 btn btn-primary" size="lg" disabled={!name || !password}>
+                    <MDBBtn outline className="mx-2 px-5" size="lg" disabled={!name || !password}>
                       Register
                     </MDBBtn>
                   </div>
