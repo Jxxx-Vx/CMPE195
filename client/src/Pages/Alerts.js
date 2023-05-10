@@ -5,8 +5,9 @@ import { getNWS } from "../actions/alerts";
 import "./Alerts.css";
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-
+import Geocode from "react-geocode";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+const stateConverter = require('us-state-converter')
 
 
 const Alerts = () => {
@@ -14,28 +15,14 @@ const Alerts = () => {
   const [events2, setEvents2] = useState([]);
   const [lng, setLng] = useState(-121.8811);
   const [lat, setLat] = useState(37.3352);
-
-
   const [location, setLocation] = useState({lat: 37.3352,lng: -121.8811});
+  const [area, setArea] = useState(["CA"]);
+ 
 
   const handleTabClick = async (eventKey) => {
-    if (eventKey === "nws") {
-      try {
-        let res2 = await getNWS(location);
-        if (res2.data) {
-          setEvents2(res2.data.features);
-        }
-        console.log(events2);
-
-      } catch (err) {
-        console.log(err);
-        if (err.response.status === 400) toast.error(err.response.data);
-      }
-    }
   };
 
   useEffect(() => {
-
     async function fetchData() {
       try {
         let res = await getUSGS({lng, lat});
@@ -43,7 +30,7 @@ const Alerts = () => {
           setEvents(res.data.features);
         }
 
-        let res2 = await getNWS(location);
+        let res2 = await getNWS({"area":area});
         if (res2.data) {
           setEvents2(res2.data.features);
         }
@@ -54,8 +41,7 @@ const Alerts = () => {
       }
     }
     fetchData();
-
-  },[lat, lng, location]);
+  },[lng, lat, area]);
   
   const containerStyle = {
     width: '100%',
@@ -63,8 +49,8 @@ const Alerts = () => {
   };
 
   const center = {
-    lat: 37.3352,
-    lng: -121.8811,
+    lat: lat,
+    lng: lng,
   };
 
   const handleMapClick = (event) => {
@@ -75,7 +61,39 @@ const Alerts = () => {
       setLat(event.latLng.lat());
       setLng(event.latLng.lng());
       console.log("Location: ", lat, ", ",lng)
+      
+      Geocode.setApiKey("AIzaSyAI5HmY_9K-OoFSwzjyU2EL0r2H-B_5tIg&callback=initMap&v=weekly");
+
+      Geocode.fromLatLng(lat, lng).then(
+        (response) => {
+          const address = response.results[0].formatted_address;
+          let city, state, country;
+          for (let i = 0; i < response.results[0].address_components.length; i++) {
+            for (let j = 0; j < response.results[0].address_components[i].types.length; j++) {
+              switch (response.results[0].address_components[i].types[j]) {
+                case "locality":
+                  city = response.results[0].address_components[i].long_name;
+                  break;
+                case "administrative_area_level_1":
+                  state = response.results[0].address_components[i].long_name;
+                  break;
+                case "country":
+                  country = response.results[0].address_components[i].long_name;
+                  break;
+              }
+            }
+          }
+          console.log(city, state, country);
+          console.log(address);
+          setArea([stateConverter.abbr(state)]);
+          console.log(stateConverter.abbr(state));
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
   };
+
   
   return (
     <>

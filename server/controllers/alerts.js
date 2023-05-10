@@ -10,7 +10,7 @@ export const usgs = async (req, res) => {
   try {
     const response = await axios
       .get(
-        `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2023-03-09&limit=12&orderby=time&&latitude=${lat}&longitude=${lng}&maxradiuskm=100`
+        `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2023-03-09&limit=12&orderby=time&&latitude=${lat}&longitude=${lng}&maxradiuskm=25`
       )
       .then((response) => {
         res.json(response.data);
@@ -22,12 +22,12 @@ export const usgs = async (req, res) => {
 
 export const nws = async (req, res) => {
   
-  const{lng, lat} = req.body;
+  const{ area } = req.body;
 
     try {
       const response = await axios
         .get(
-          `https://api.weather.gov/alerts/active?limit=20&point=${lat},${lng}`
+          `https://api.weather.gov/alerts/active?limit=20&area=${area}`
         )
         .then((response) => {
           res.json(response.data);
