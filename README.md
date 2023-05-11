@@ -1,5 +1,7 @@
 # CMPE195A - Senior Design Project
 
+[Github Link of source code](https://github.com/Jxxx-Vx/CMPE195)
+
 ## How to Build and Run
 
 1. In the server app directory:
