@@ -46,7 +46,7 @@ const Register = ({ history }) => {
               <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
                 <h2 className="fw-bold mb-2 text-uppercase">Registration</h2>
                 <p className="text-black-50 mb-1">
-                  To create an account user most provide: 
+                  To create an account user must provide: 
                 </p>
                 <p className="text-black-50 mb-3">
                   Username, Email, and Password
