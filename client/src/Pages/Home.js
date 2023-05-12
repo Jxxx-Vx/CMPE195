@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Home.css';
+import spartan from "./spartan.png"
+import news from "./news.png"
 
 const Home = () => {
 
@@ -81,7 +83,7 @@ const Home = () => {
           </div>
           <div className="home-mission-image">
             <img
-              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/dbf4f428-9f63-44a4-9318-00cacdaadd2d/f3e72f14-c9c7-4dcb-bce0-bd9f8a254550?org_if_sml=1262002"
+              src="https://clipart.coolclips.com/480/vectors/tf05171/CoolClips_vc011882.png"
               alt="Our Mission"
               className="home-section-image"
             />
@@ -100,7 +102,7 @@ const Home = () => {
           </div>
           <div className="home-how-image">
               <img
-                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/dbf4f428-9f63-44a4-9318-00cacdaadd2d/f3e72f14-c9c7-4dcb-bce0-bd9f8a254550?org_if_sml=1262002"
+                src={news}
                 alt=""
                 className="home-section-image"
               />
@@ -116,11 +118,26 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="home-how-image">
+          <div className="home-about-image">
               <img
-                src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/dbf4f428-9f63-44a4-9318-00cacdaadd2d/f3e72f14-c9c7-4dcb-bce0-bd9f8a254550?org_if_sml=1262002"
+                src={spartan}
                 alt=""
-                className="home-section-image"
+                className="team-image"
+              />
+              <img
+                src={spartan}
+                alt=""
+                className="team-image"
+              />
+              <img
+                src={spartan}
+                alt=""
+                className="team-image"
+              />
+              <img
+                src={spartan}
+                alt=""
+                className="team-image"
               />
           </div>  
         </div>

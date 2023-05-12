@@ -24,6 +24,7 @@ const SearchBar = ({ panTo }) => {
     return (
       <div className="search-bar">
         <input
+          className = "search-input"
           value={value}
           onChange={handleInput}
           disabled={!ready}

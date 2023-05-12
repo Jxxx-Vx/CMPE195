@@ -5,12 +5,12 @@
     border-radius: 10px;
 }
 
-input, .search-btn {
+.search-input, .search-btn {
     height: var(--height);
     font-family: var(--font-fam);
     border: 0;
     color: var(--color-dark);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   input[type="search"] {
