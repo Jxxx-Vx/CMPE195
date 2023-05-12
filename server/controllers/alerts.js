@@ -10,7 +10,7 @@ export const usgs = async (req, res) => {
   try {
     const response = await axios
       .get(
-        `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2023-03-09&limit=12&orderby=time&&latitude=${lat}&longitude=${lng}&maxradiuskm=25`
+        `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2023-03-09&limit=12&orderby=time&&latitude=${lat}&longitude=${lng}&maxradiuskm=80`
       )
       .then((response) => {
         res.json(response.data);
